@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">  
+  <title>CSS实现带箭头的流程进度条</title>
+<style type="text/css">
+.cssNav li{  
+    padding: 0px 30px;   
+    line-height: 40px;  
+    background: #50abe4;  
+    display: inline-block;	
+	/*float:left;*/
+    color: #fff;  
+    position: relative;  
+}
+
+.cssNav li:after{  
+    content: '';  
+    display: block;  
+    border-top: 20px solid transparent;  
+    border-bottom: 20px solid transparent;  
+    border-left: 20px solid #50abe4;  
+    position: absolute;   
+    right: -20px;   
+    top: 0;  
+    z-index: 10;  
+}
+
+.cssNav li:before{  
+    content: '';  
+    display: block;  
+    border-top: 20px solid #50abe4;  
+    border-bottom: 20px solid #50abe4;  
+    border-left: 20px solid white;	
+    position: absolute;   
+    left: 0px;   
+    top: 0;  
+}
+.cssNav li:first-child{    
+    border-radius: 4px 0 0 4px;    
+    padding-left: 25px;  
+}
+.cssNav li:last-child,.cssNavEnd{    
+    border-radius: 0px 4px 4px 0px;    
+    padding-right: 25px;  
+} 
+.cssNav li:first-child:before{    
+    display: none;    
+}    
+.cssNav li:last-child:after,.cssNavEnd:after{    
+    display: none;    
+}        
+</style>  
+</head>
+<body>
+<ul class="cssNav">
+  <li>Tab1</li>
+  <li>Tab2</li>
+  <li>Tab3</li>
+  <li>Tab4</li>
+  <li>Tab5</li>
+  <li>Tab6</li>
+</ul>
+</body>
